@@ -1,24 +1,21 @@
-import "./style.css"
+import { ButtonsWrapper, WrapperButtons } from "./styled";
 
-const Buttons = ({tasks, hideDone, toggleHideDone, setAllDone}) => (
-    <div className="buttons">
-      {tasks.length > 0 &&(
-        <>
-        <button onClick={toggleHideDone} className="buttons__button">
-        {hideDone ? "Pokaż" : "Ukryj"} ukończone
-        </button>
-        <button
-        onClick={setAllDone}
-        className="buttons__button"
-        disabled={tasks.every(({ done })=> done)}
+const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
+  <ButtonsWrapper>
+    {tasks.length > 0 && (
+      <>
+        <WrapperButtons onClick={toggleHideDone}>
+          {hideDone ? "Pokaż" : "Ukryj"} ukończone
+        </WrapperButtons>
+        <WrapperButtons
+          onClick={setAllDone}
+          disabled={tasks.every(({ done }) => done)}
         >
-        Ukończ wszystkie
-        </button>
-        </>
-      )}
-        
-    </div>
-  
+          Ukończ wszystkie
+        </WrapperButtons>
+      </>
+    )}
+  </ButtonsWrapper>
 );
 
 export default Buttons;

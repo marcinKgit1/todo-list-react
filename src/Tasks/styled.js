@@ -41,11 +41,11 @@ export const Button = styled.button`
     css`
       background: hsl(120, 61%, 34%);
 
-      &: hover {
+      &:hover {
         background: hsl(120, 61%, 39%);
       }
 
-      &: active {
+      &:active {
         background: hsl(120, 61%, 44%);
       }
     `}
